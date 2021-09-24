@@ -7,7 +7,6 @@ y_true = np.random.randint(2,size = 100)
 def custom_fbeta_socre(y_pred,y_true,beta = 1):
     precision = precision_score(y_true,y_pred)
     recall = recall_score(y_true,y_pred)
-
     fbeta = (1+(beta)**2) * (precision*recall)/(beta**2*precision + recall)
     return fbeta
 print(custom_fbeta_socre(y_pred,y_true,beta=2))
