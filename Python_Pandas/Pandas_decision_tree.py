@@ -110,14 +110,30 @@ clf_p.fit(x_train_c,y_train_c)
 y_pred_c = clf_p.predict(x_test_c)
 print("Mean squared error_DTR_C: %.2f"
       % mean_squared_error(y_test_c, y_pred_c))
+print('R2_c:{}'.format(clf_p.score(x_test_c,y_test_c)))
+#plotting the y_test_c vs y_pred_c
+plt.scatter(y_pred_c,y_test_c)
+plt.xlabel('y_pred_c')
+plt.ylabel('y_test_c')
+plt.show()
 #訓練模型使用隨機森林的特徵
 clf_p.fit(x_train_RF,y_train_RF)
 #模型預測RandomF
 y_pred_RF = clf_p.predict(x_test_RF)
 print("Mean squared error_DTR_RF: %.2f"
       % mean_squared_error(y_test_RF, y_pred_RF))
+print('R2_RF:{}'.format(clf_p.score(x_test_RF,y_test_RF)))
+plt.scatter(y_pred_RF,y_test_RF)
+plt.xlabel('y_pred_RF')
+plt.ylabel('y_test_RF')
+plt.show()
 #訓練模型使用L1 Lasso的特徵
 clf_p.fit(x_train_L1,y_train_L1)
 y_pred_L1 = clf_p.predict(x_test_L1)
 print("Mean squared error_DTR_L1: %.2f"
       % mean_squared_error(y_test_L1, y_pred_L1))
+print('R2_RF:{}'.format(clf_p.score(x_test_L1,y_test_L1)))
+plt.scatter(y_pred_L1,y_test_L1)
+plt.xlabel('y_pred_L1')
+plt.ylabel('y_test_L1')
+plt.show()
