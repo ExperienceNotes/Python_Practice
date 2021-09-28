@@ -8,7 +8,7 @@ plt.style.use('ggplot')
 import warnings
 warnings.filterwarnings('ignore')
 
-dir = './Datasets/'
+dir = './Python_Practice/Python_Pandas/Datasets/'
 path = os.path.join(dir,'application_train.csv')
 app_train = pd.read_csv(path)
 
